@@ -16,7 +16,11 @@ spec:
         namespace: flux-system
   values:
     grafana:
-      adminPassword: prom-operator
+      # hardcodeamos aquí el usuario y la contraseña
+      adminUser: "admin"
+      adminPassword: "123456"
+      # eliminamos cualquier referencia a Secret externo
+      existingSecret: ""
       service:
         type: ClusterIP
       ingress:
@@ -27,6 +31,7 @@ spec:
           - secretName: grafana-tls
             hosts:
               - grafana.local
+
     prometheus:
       service:
         type: ClusterIP
