@@ -19,6 +19,22 @@ spec:
       adminPassword: prom-operator
       service:
         type: ClusterIP
+      ingress:
+        enabled: true
+        hosts:
+          - grafana.local
+        tls:
+          - secretName: grafana-tls
+            hosts:
+              - grafana.local
     prometheus:
       service:
         type: ClusterIP
+      ingress:
+        enabled: true
+        hosts:
+          - prometheus.local
+        tls:
+          - secretName: prometheus-tls
+            hosts:
+              - prometheus.local
