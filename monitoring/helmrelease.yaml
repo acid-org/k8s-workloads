@@ -31,6 +31,12 @@ spec:
           - secretName: grafana-tls
             hosts:
               - grafana.local
+      dashboards:
+        default:
+          k8s-cluster-resources:
+            gnetId: 315
+            revision: 4
+            datasource: Prometheus
 
     prometheus:
       service:
@@ -43,3 +49,43 @@ spec:
           - secretName: prometheus-tls
             hosts:
               - prometheus.local
+    kube-state-metrics:
+      enabled: true
+    nodeExporter:
+      enabled: true
+    prometheus-node-exporter:
+      enabled: true
+    prometheusOperator:
+      prometheusConfigReloader:
+        resources:
+          limits:
+            cpu: 100m
+            memory: 50Mi
+          requests:
+            cpu: 100m
+            memory: 50Mi
+    defaultRules:
+      create: true
+      rules:
+        kubeSchedulerAlerting: true
+        kubeSchedulerRecording: true
+        kubeControllerManager: true
+        kubelet: true
+        kubeProxy: true
+        etcd: true
+        general: true
+        k8s: true
+        node: true
+        prometheus: true
+        alertmanager: true
+        kubeApiserver: true
+        kubePrometheusGeneral: true
+        kubePrometheusNodeRecording: true
+        kubernetesApps: true
+        kubernetesResources: true
+        kubernetesStorage: true
+        kubernetesSystem: true
+        network: true
+        nodeExporterAlerting: true
+        nodeExporterRecording: true
+        prometheusOperator: true
