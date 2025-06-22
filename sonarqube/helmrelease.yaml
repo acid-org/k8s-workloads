@@ -18,11 +18,11 @@ spec:
     ingress:
       enabled: true
       hosts:
-        - sonarqube.local
+        - name: sonarqube.local
       tls:
-        - secretName: sonarqube-tls
-          hosts:
+        - hosts:
             - sonarqube.local
+          secretName: sonarqube-tls
     adminPassword: "123456"
     persistence:
       enabled: true
