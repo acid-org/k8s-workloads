@@ -7,3 +7,4 @@ resources:
   - grafana-secret.yaml
   - metrics-server-helmrelease.yaml
   - metrics-server-helmrepository.yaml
+  - prometheus-admin-secret.yaml

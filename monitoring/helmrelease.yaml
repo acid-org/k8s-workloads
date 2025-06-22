@@ -49,6 +49,9 @@ spec:
           - secretName: prometheus-tls
             hosts:
               - prometheus.local
+      prometheusSpec:
+        secrets:
+          - prometheus-admin-secret
     kube-state-metrics:
       enabled: true
     nodeExporter:
