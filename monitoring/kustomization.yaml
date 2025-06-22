@@ -8,5 +8,5 @@ resources:
   - metrics-server-helmrelease.yaml
   - metrics-server-helmrepository.yaml
   - prometheus-admin-secret.yaml
-  - kiali-helmrepository.yaml
-  - kiali-helmrelease.yaml
+  - sonarqube-helmrepository.yaml
+  - sonarqube-helmrelease.yaml
