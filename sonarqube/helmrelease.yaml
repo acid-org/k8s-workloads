@@ -19,10 +19,12 @@ spec:
       enabled: true
       hosts:
         - name: sonarqube.local
+          path: /
+      annotations: {}
       tls:
-        - hosts:
+        - secretName: sonarqube-tls
+          hosts:
             - sonarqube.local
-          secretName: sonarqube-tls
     adminPassword: "123456"
     persistence:
       enabled: true
