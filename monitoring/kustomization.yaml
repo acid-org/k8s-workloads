@@ -5,3 +5,5 @@ resources:
   - helmrepository.yaml
   - helmrelease.yaml
   - grafana-secret.yaml
+  - metrics-server-helmrelease.yaml
+  - metrics-server-helmrepository.yaml
