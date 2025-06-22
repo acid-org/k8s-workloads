@@ -10,3 +10,5 @@ resources:
   - prometheus-admin-secret.yaml
   - kubeview-helmrepository.yaml
   - kubeview-helmrelease.yaml
+  - kiali-helmrepository.yaml
+  - kiali-helmrelease.yaml

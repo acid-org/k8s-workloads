@@ -1,0 +1,35 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: kiali
+  namespace: monitoring
+spec:
+  releaseName: kiali
+  interval: 10m
+  chart:
+    spec:
+      chart: kiali-server
+      version: "1.82.0"
+      sourceRef:
+        kind: HelmRepository
+        name: kiali
+        namespace: flux-system
+  values:
+    auth:
+      strategy: login
+      username: admin
+      password: 123456
+    deployment:
+      ingress_enabled: true
+      ingress_class_name: ""
+      ingress_hosts:
+        - kiali.local
+      ingress_tls:
+        - secretName: kiali-tls
+          hosts:
+            - kiali.local
+    external_services:
+      prometheus:
+        url: "http://kube-prometheus-stack-prometheus.monitoring:9090"
+      grafana:
+        url: "http://kube-prometheus-stack-grafana.monitoring:80"
