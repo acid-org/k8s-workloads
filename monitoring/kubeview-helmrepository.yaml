@@ -1,8 +1,1 @@
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: HelmRepository
-metadata:
-  name: kubeview
-  namespace: flux-system
-spec:
-  interval: 1h0m0s
-  url: https://benc-uk.github.io/kubeview
+# This file was removed as KubeView is no longer deployed.
