@@ -10,3 +10,4 @@ resources:
   - prometheus-admin-secret.yaml
   - sonarqube-helmrepository.yaml
   - sonarqube-helmrelease.yaml
+  - metrics-server-auth-reader-rolebinding.yaml
